@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>gallery</title>
+        <th:block th:include="fragments/layout.html :: headerfiles">
+        </th:block>
+
+        <link th:href="@{/css/honorMeGallery.css}" rel="stylesheet" />
+
+        <!--    gallery-->
+        <link rel="stylesheet" th:href="@{//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css}" media="screen"/>
+        <script th:src="@{//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js}"></script>
+
+    </head>
+
+    <body class="d-flex flex-column">
+
+        <header th:insert="fragments/layout.html :: navbar"> </header>
+
+        <div th:insert="fragments/layout.html :: headerBig (title ='Gallerie')"></div>
+
+        <!--        Page Content -->
+        <div class="container">
+
+            <div class="accordion" id="accordionExample">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="mb-0">
+                            <button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                VulkanLan 2019
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="row">
+
+                                <div th:each="i: ${#numbers.sequence(0, 3)}" th:remove="tag">
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <a th:href="@{'images/gallery/lan2019/' + ${i} + '.JPG'}" class="fancybox" rel="ligthbox">
+                                            <img th:src="@{'images/gallery/lan2019/' + ${i} + '.JPG'}" class="zoom img-fluid "  alt="">
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="mb-0">
+                            <button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                VulkanLan 2018
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="row">
+
+                                <div th:each="i: ${#numbers.sequence(0, 8)}" th:remove="tag">
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <a th:href="@{'images/gallery/lan2018/' + ${i} + '.JPG'}" class="fancybox" rel="ligthbox">
+                                            <img th:src="@{'images/gallery/lan2018/' + ${i} + '.JPG'}" class="zoom img-fluid "  alt="">
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="mb-0">
+                            <button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                VulkanLan2017
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="row">
+
+                                <div th:each="i: ${#numbers.sequence(0, 2)}" th:remove="tag">
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <a th:href="@{'images/gallery/lan2017/' + ${i} + '.JPG'}" class="fancybox" rel="ligthbox">
+                                            <img th:src="@{'images/gallery/lan2017/' + ${i} + '.JPG'}" class="zoom img-fluid "  alt="">
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--accordion end-->
+            </div>
+            <!--container end-->
+        </div>
+
+        <div th:replace="fragments/layout.html :: counter"></div>
+        <section th:replace="fragments/layout.html :: section"></section>
+        <div th:replace="fragments/layout.html :: footer"></div>
+
+    </body>
+</html>

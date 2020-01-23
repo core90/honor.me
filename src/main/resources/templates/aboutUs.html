@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>members</title>
+        <th:block th:include="fragments/layout.html :: headerfiles">
+        </th:block>
+    </head>
+
+    <body  class="d-flex flex-column">
+        <header th:insert="fragments/layout.html :: navbar"> </header>
+
+        <div th:insert="fragments/layout.html :: headerBig (title ='About Us')"></div>
+
+        <!-- Page Content -->
+        <div class="container">
+
+            <h1 class="my-4">Honor Me -
+                <small>Fun Gaming Clan aus Österreich</small>
+            </h1>
+
+            <div class="col-md-8">
+                <img class="img-fluid" th:src="@{images/general/gruppe2Edit.png}" alt="">
+            </div>
+
+            <div class="col-md-8">
+                <h3 class="my-3">Bewirb dich jetzt!</h3>
+                <p>Zu den Spielen, die wir etwas "professioneller" zocken, gehören unter anderem League of Legends und Rocket League.
+                Allerdings wird generell alles gespielt was Spaß macht. Falls du Lust hast unserer illustren Runde beizutreten, kannst 
+                du dich gerne bewerben unter <b>clan.honor.me@gmail.com</b> oder schreib uns auf Facebook: <a href="https://www.facebook.com/HonorMeClan">www.facebook.com/HonorMeClan.</a></p>
+                <p>Wer weiß, vielleicht bis du bald der nächste semi-professionelle-casual-gamer in unserem Clan!</p>
+            </div>
+
+            <header class="bg text-center py-2 mb-4" id="headerOne">
+                <div class="container">
+                    <h1 class="font-weight-light text-white">Mitglieder</h1>
+                </div>
+            </header>
+
+            <div class="row">
+
+                <!--                coregamer90-->
+                <div th:replace="fragments/layout.html
+                     :: memberLol (name='CoreGamer90', 
+                     function='Senior CEO, Founder', 
+                     team='League of Legends Team', 
+                     picture='images/members/coregamer90.jpg',
+                     number='0')">        
+                </div>
+
+                <!--                fiffo-->
+                <div th:replace="fragments/layout.html
+                     :: memberLol (name='Fiffo', 
+                     function='Junior CEO, Founder', 
+                     team='League of Legends Team', 
+                     picture='images/members/fiffo.jpg',
+                     number='1')">        
+                </div>
+
+                <!--                braindead28-->
+                <div th:replace="fragments/layout.html
+                     :: memberLol (name='Braindead28', 
+                     function='Founder', 
+                     team='League of Legends Team', 
+                     picture='images/members/braindead28.jpg',
+                     number='2')">        
+                </div>
+
+                <!--                besoffenekugel-->
+                <div th:replace="fragments/layout.html
+                     :: memberLol (name='BesoffeneKugel', 
+                     function='Rocket League Coach', 
+                     team='League of Legends Team', 
+                     picture='images/members/besoffenekugel.jpg',
+                     number='3')">        
+                </div>
+
+                <!--                seppl-->
+                <div th:replace="fragments/layout.html
+                     :: memberLol (name='Seppl', 
+                     function='', 
+                     team='League of Legends Team', 
+                     picture='images/members/seppl.jpg',
+                     number='4')">        
+                </div>
+
+                <!--                killhim-->
+                <div th:replace="fragments/layout.html
+                     :: memberLol (name='Killhim', 
+                     function='', 
+                     team='League of Legends Team', 
+                     picture='images/members/killhim.jpg',
+                     number='5')">        
+                </div>
+
+                <!--                ulzman-->
+                <div th:replace="fragments/layout.html
+                     :: memberLol (name='Ulzman', 
+                     function='', 
+                     team='League of Legends Team', 
+                     picture='images/members/ulzman.jpg',
+                     number='6')">        
+                </div>
+
+                <!--                lordkiller-->
+                <div th:replace="fragments/layout.html
+                     :: memberLol (name='Lordkiller', 
+                     function='', 
+                     team='League of Legends Team', 
+                     picture='images/members/lordkiller.jpg',
+                     number='7')">        
+                </div>
+
+                <!--                tom555-->
+                <div th:replace="fragments/layout.html
+                     :: memberDefault (name='Tom555', 
+                     function='', 
+                     team='', 
+                     picture='images/members/tom555.jpg')">        
+                </div>
+
+                <!--                pytxxn-->
+                <div th:replace="fragments/layout.html
+                     :: memberDefault (name='pytxxn', 
+                     function='', 
+                     team='', 
+                     picture='images/members/pytxxn.jpg')">        
+                </div>
+
+                <!--                gagabuga-->
+                <div th:replace="fragments/layout.html
+                     :: memberDefault (name='Gagabuga', 
+                     function='', 
+                     team='', 
+                     picture='images/members/logo.jpg')">        
+                </div>
+
+                <!--                danyM6-->
+                <div th:replace="fragments/layout.html
+                     :: memberDefault (name='DanyM6', 
+                     function='', 
+                     team='', 
+                     picture='images/members/logo.jpg')">        
+                </div>
+
+                <!--                flitzer85-->
+                <div th:replace="fragments/layout.html
+                     :: memberDefault (name='Flitzer85', 
+                     function='', 
+                     team='', 
+                     picture='images/members/logo.jpg')">        
+                </div>
+
+                <!--                xredor-->
+                <div th:replace="fragments/layout.html
+                     :: memberDefault (name='Xredor', 
+                     function='', 
+                     team='', 
+                     picture='images/members/logo.jpg')">        
+                </div>
+
+            </div>
+        </div>
+
+        <div th:replace="fragments/layout.html :: counter"></div>
+        <section th:replace="fragments/layout.html :: section"></section>
+        <div th:replace="fragments/layout.html :: footer"></div>
+
+    </body>
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+    <head th:fragment="headerfiles">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <!--seo-->
+        <meta name="description" content="Clan Honor Me - Ein Österreichischer Fun-Gaming Clan"/>
+        <meta name="keywords" content="honor me, clan, lan, league of legends, rocket league, guild, player, teams, squad, esport, fun, multiplayer, gaming, vulkanlan"/>
+        <!--google site verification-->
+        <meta name="google-site-verification" content="oFxPcFsfJXqPECjPjxprzRSGXg2Dm57V6OzaAzD2H4Q" />
+
+        <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+        <link th:href="@{/css/bootstrap-reboot.css}" rel="stylesheet" />
+        <link th:href="@{/css/honorMe.css}" rel="stylesheet" />
+        <link href="@{/fonts.googleapis.com/css?family=McLaren}" rel='stylesheet'/>
+
+        <!--        icons-->
+        <link rel="stylesheet" th:href="@{//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css}"/>
+
+        <!--        gallery-->
+        <!--        <link rel="stylesheet" type="text/css" th:href="@{//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}" id="bootstrap-css"/>        -->
+        <script type="text/javascript" th:src="@{//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
+        <script type="text/javascript" th:src="@{//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/honorMe.js}"></script>
+    </head>
+
+
+
+
+    <body class="d-flex flex-column">
+
+        <!--        navbar fragment-->
+        <div th:fragment="navbar">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+                <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand d-flex flex-fill" href="/"> <img th:src="@{favicon/favicon-32x32.png}" width="30" height="30" class="d-inline-block align-top" alt="">
+                        Honor Me</a>
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="navbar-nav justify-content-center d-flex flex-fill">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/aboutUs.html">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex flex-fill"><!--spacer--> </div>
+            </nav>
+        </div>
+
+        <!--        member fragment default-->
+        <div th:fragment="memberDefault (name, function, team, picture)" th:remove="tag">
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                    <img th:src="${picture}" class="card-img-top" th:alt="${name}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-0" th:text="${name}">Name</h5>
+                            <div class="card-text">
+                                <p th:text="${function}">Function</p>
+                                <p th:text="${team}">Team</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <!--        member fragment with lol stats-->
+        <div th:fragment="memberLol (name, function, team, picture, number)" th:remove="tag">
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                    <img th:src="${picture}" class="card-img-top" th:alt="${name}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-0" th:text="${name}">Name</h5>
+                            <div class="card-text">
+                                <p th:text="${function}">Function</p>
+                                <p th:text="${team}">Team</p>
+                                <div class="summonerData">
+                                    <!--                                    <p th:text="${'Level: ' + summoner[0].sumLevel}">summoner</p>-->
+                                    <p th:text="${summoner[number].sumTier + ' ' +  summoner[number].sumDivision}">summoner</p>                                                   
+
+                                    <p th:switch="${summoner[number].sumTier}">
+                                        <span th:case="'CHALLENGER'"><img th:src="@{lolRankedIcons/Emblem_Challenger.png}" title="Solo/Duo Rank 5v5"/></span>
+                                        <span th:case="'GRANDMASTER'"><img th:src="@{lolRankedIcons/Emblem_Grandmaster.png}" title="Solo/Duo Rank 5v5"/></span>
+                                        <span th:case="'MASTER'"><img th:src="@{lolRankedIcons/Emblem_Master.png}" title="Solo/Duo Rank 5v5"/></span>
+                                        <span th:case="'DIAMOND'"><img th:src="@{lolRankedIcons/Emblem_Diamond.png}" title="Solo/Duo Rank 5v5"/></span>
+                                        <span th:case="'PLATINUM'"><img th:src="@{lolRankedIcons/Emblem_Platinum.png}" title="Solo/Duo Rank 5v5"/></span>
+                                        <span th:case="'GOLD'"><img th:src="@{lolRankedIcons/Emblem_Gold.png}" title="Solo/Duo Rank 5v5"/></span>
+                                        <span th:case="'SILVER'"><img th:src="@{lolRankedIcons/Emblem_Silver.png}" title="Solo/Duo Rank 5v5"/></span>
+                                        <span th:case="'BRONZE'"><img th:src="@{lolRankedIcons/Emblem_Bronze.png}" title="Solo/Duo Rank 5v5"/></span>
+                                        <span th:case="'IRON'"><img th:src="@{lolRankedIcons/Emblem_Iron.png}" title="Solo/Duo Rank 5v5"/></span>
+                                        <span th:case="*"><img th:src="@{lolRankedIcons/Emblem_Unranked.png}" title="Solo/Duo Rank 5v5"/></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <!--        header fragment-->
+        <div th:fragment="headerBig (title)" th:remove="tag">
+            <header class="bg text-center py-5 mb-4" id="headerOne">
+
+                <div class="d-flex justify-content-between">
+                    <img th:src="@{images/general/logoNoBackground.png}" width="10%" class="d-inline-block align-top" alt="" id="logo"/>
+                    <h1 class="align-self-center" id="head-size" th:text="${title}">title</h1>
+                    <img th:src="@{images/general/logoNoBackground.png}" width="10%" class="d-inline-block align-right" alt="" id="logo"/>
+                </div>
+
+            </header>
+        </div>
+
+        <!--        news fragment-->
+        <div th:fragment="article (title, date, picture, head, p1, p2, p3)" th:remove="tag">
+            <div class="row">
+                <div id="marginBetweenContent">
+                    <!-- Post Content Column -->
+                    <div class="col-lg-8">
+
+                        <!-- Title -->
+                        <h1 class="mt-4" th:text="${title}">Title</h1>
+
+                        <hr>
+
+                            <!-- Date/Time -->
+                            <p th:text="${date}">Date</p>
+
+                        </hr>
+
+                        <!-- Preview Image -->
+                        <img  th:src="${picture}" class="img-fluid rounded"  th:alt="${title}">
+
+                            <hr>
+
+                                <!-- Post Content -->
+                                <p class="lead" th:text="${head}">head</p>
+
+                                <p th:text="${p1}">paragraph3</p>
+
+                                <p th:text="${p2}">paragraph2</p>
+
+                                <p th:text="${p3}">paragraph3</p>
+                            </hr>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!--counter fragment-->
+        <div th:fragment="counter">
+            <div id="marginBetweenContent">
+                <div class="container">
+                    <header class="bg text-center py-2 mb-4" id="headerOne">
+                        <div class="container">
+                            <h1 class="font-weight-light text-white">Stats & Facts</h1>
+                        </div>
+                    </header>
+                    <div class="row text-center">
+                        <div class="col">
+                            <div class="counter">
+                                <i class="fa fa-users fa-2x"></i>
+                                <h2 class="timer count-title count-number" data-to="14" data-speed="1500"></h2>
+                                <p class="count-text ">Clan-Mitglieder</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="counter">
+                                <i class="fa fa-desktop fa-2x"></i>
+                                <h2 class="timer count-title count-number" data-to="3" data-speed="1500"></h2>
+                                <p class="count-text ">LAN-Teilnahmen</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="counter">
+                                <i class="fa fa-home fa-2x"></i>
+                                <h2 class="timer count-title count-number" data-to="5" data-speed="1500"></h2>
+                                <p class="count-text ">Bootcamps absolviert</p>
+                            </div></div>
+                        <div class="col">
+                            <div class="counter">
+                                <i class="fa fa-trophy fa-2x"></i>
+                                <h2 class="timer count-title count-number" data-to="1" data-speed="1500"></h2>
+                                <p class="count-text ">Podestplätze</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="container-fluid flex-grow" th:fragment="section">
+            <!--        needed for sticky footer-->
+        </section>
+
+        <!--footer fragment-->
+        <div th:fragment="footer">
+
+            <footer class="bg-dark mt-4">
+                <div class="container-fluid py-3">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Clan Honor Me <span class="small"><br>clan.honor.me@gmail.com</span></h5></div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3">                            
+                            <a th:href="@{//facebook.com/HonorMeClan}" id="socialMediaIcons" th:target="_blank" class="fa fa-facebook"></a>
+                            <a th:href="@{//youtube.com/channel/UCnBY8hlI79oiX4lhf-iG5eQ}" th:target="_blank" id="socialMediaIcons" class="fa fa-youtube"></a>
+                        </div>
+                        <div class="col-md-3 text-right small align-self-end">© 2019, Honor Me IT-Department</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>

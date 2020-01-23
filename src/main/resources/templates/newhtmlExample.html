@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <title>Welcome</title>
+        <th:block th:include="fragments/layout.html :: headerfiles">
+        </th:block>
+    </head>
+    <body class="d-flex flex-column">
+        <header th:insert="fragments/layout.html :: navbar"> </header>
+
+        <section th:replace="fragments/layout.html :: section"></section>
+        <div th:replace="fragments/layout.html :: footer"></div>
+
+    </body>
+</html>

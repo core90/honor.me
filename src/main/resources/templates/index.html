@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <title>Clan Honor Me</title>
+        <th:block th:include="fragments/layout.html :: headerfiles"></th:block>  
+    </head>
+    <body class="d-flex flex-column">
+        <header th:insert="fragments/layout.html :: navbar"> </header>
+
+        <div th:insert="fragments/layout.html :: headerBig (title ='Clan Honor Me')"></div>
+
+        <!-- Page Content -->
+        <div class="container">
+
+
+            <h1 class="my-4">Willkommen!
+                <small>Beim Clan Honor Me</small>
+            </h1>
+
+            <div class="row">
+
+                <div class="col-md-8">
+                    <img class="img-fluid" th:src="@{images/general/honormeclan Kopie.jpg}" alt="">
+                </div>
+
+                <div class="col-md-4">
+                    <h3 class="my-3">Honor Me!</h3>
+                    <p>Das war ein Ausruf, der 2017 immer öfter durch die heimischen Wohnzimmer hallte. 
+                        Der Durst nach Ehre konnte nur durch ausgezeichnete Spielzüge und großartige Siege gestillt werden. 
+                        Da leider beides Mangelware war bzw. ist, haben wir einen Fun-Clan gegründet um wenigstens eine Gemeinschaft zu haben, 
+                        bei der Gewinnen nicht immer im Vordergrund steht sondern eher der Spaß am Spiel.</p>
+                    <p>Heute, einige Jahre später, zählen wir bereits einige Mitglieder und freuen uns immer über neue Gesichter.
+                        Falls du Interesse hast, kannst du dich gerne bei uns bewerben!</p>
+                </div>
+
+            </div>
+            <!-- /.row -->
+
+
+
+            <div id="marginBetweenContent">
+                <h3 class="my-4">Lerne uns kennen:</h3>
+            </div>
+
+            <div class="row">
+
+
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <a href="/aboutUs.html">
+                        <img class="img-fluid rounded-circle" id="img-link" th:src="@{images/general/aboutUs.jpg}" alt="">
+                            <div class="middle">
+                                <div class="text">About us</div>
+                            </div>
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <a href="/news.html">
+                        <img class="img-fluid rounded-circle" id="img-link" th:src="@{images/general/news.jpg}" alt="">
+                            <div class="middle">
+                                <div class="text">News</div>
+                            </div>
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <a href="/gallery.html">
+                        <img class="img-fluid rounded-circle"  id="img-link" th:src="@{images/general/gallery.jpg}" alt="">
+                            <div class="middle">
+                                <div class="text">Gallery</div>
+                            </div>
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <a href="/aboutUs.html">
+                        <img class="img-fluid rounded-circle" id="img-link" th:src="@{images/general/contact.jpg}" alt="">
+                            <div class="middle">
+                                <div class="text">Contact us</div>
+                            </div>
+                    </a>
+                </div>
+
+
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+
+        <div th:replace="fragments/layout.html :: counter"></div>
+        <section th:replace="fragments/layout.html :: section"></section>
+        <div th:replace="fragments/layout.html :: footer"></div>
+
+    </body>
+</html>
