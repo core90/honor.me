@@ -1,6 +1,7 @@
 # Honor Me Clan Website, Visit on https://honorme.herokuapp.com/
 
 Build on Spring Boot Framework, Maven and Thymeleaf Template Engine.
+Frontend feat. Bootstrap, CSS and JS.
 
 Uses Riot Games API (Orianna Framework).
 
