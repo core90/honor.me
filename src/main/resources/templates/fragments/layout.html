@@ -12,13 +12,15 @@
         <!--google site verification-->
         <meta name="google-site-verification" content="oFxPcFsfJXqPECjPjxprzRSGXg2Dm57V6OzaAzD2H4Q" />
 
+
         <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
         <link th:href="@{/css/bootstrap-reboot.css}" rel="stylesheet" />
         <link th:href="@{/css/honorMe.css}" rel="stylesheet" />
         <link href="@{/fonts.googleapis.com/css?family=McLaren}" rel='stylesheet'/>
 
         <!--        icons-->
-        <link rel="stylesheet" th:href="@{//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css}"/>
+        <!--        <link rel="stylesheet" th:href="@{//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css}"/>-->
+        <script src="https://kit.fontawesome.com/480dea9490.js"></script>
 
         <!--        gallery-->
         <!--        <link rel="stylesheet" type="text/css" th:href="@{//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}" id="bootstrap-css"/>        -->
@@ -39,7 +41,7 @@
                 <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand d-flex flex-fill" href="/"> <img th:src="@{favicon/favicon-32x32.png}" width="30" height="30" class="d-inline-block align-top" alt="">
+                <a class="navbar-brand d-flex flex-fill" href="/"> <img th:src="@{favicon/favicon-32x32.png}" width="30" height="30" class="d-inline-block align-top" alt="honor-me-favicon">
                         Honor Me</a>
                 <div class="navbar-collapse collapse" id="navbar">
                     <ul class="navbar-nav justify-content-center d-flex flex-fill">
@@ -112,9 +114,9 @@
             <header class="bg text-center py-5 mb-4" id="headerOne">
 
                 <div class="d-flex justify-content-between">
-                    <img th:src="@{images/general/logoNoBackground.png}" width="10%" class="d-inline-block align-top" alt="" id="logo"/>
+                    <img th:src="@{images/general/logoNoBackground.png}" width="10%" class="d-inline-block align-top" alt="honor-me-logo" id="logo"/>
                     <h1 class="align-self-center" id="head-size" th:text="${title}">title</h1>
-                    <img th:src="@{images/general/logoNoBackground.png}" width="10%" class="d-inline-block align-right" alt="" id="logo"/>
+                    <img th:src="@{images/general/logoNoBackground.png}" width="10%" class="d-inline-block align-right" alt="honor-me-logo" id="logo"/>
                 </div>
 
             </header>
@@ -210,14 +212,21 @@
             <footer class="bg-dark mt-4">
                 <div class="container-fluid py-3">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <h5>Clan Honor Me <span class="small"><br>clan.honor.me@gmail.com</span></h5></div>
-                        <div class="col-md-3"></div>
-                        <div class="col-md-3">                            
-                            <a th:href="@{//facebook.com/HonorMeClan}" id="socialMediaIcons" th:target="_blank" class="fa fa-facebook"></a>
-                            <a th:href="@{//youtube.com/channel/UCnBY8hlI79oiX4lhf-iG5eQ}" th:target="_blank" id="socialMediaIcons" class="fa fa-youtube"></a>
+<!--                        <div class="col-md-3"></div>-->
+                        <div class="col-md-4 text-center">                            
+<!--                            <a th:href="@{//facebook.com/HonorMeClan}" id="socialMediaIcons" th:target="_blank" class="fab fa-facebook"></a>
+                            <a th:href="@{//youtube.com/channel/UCnBY8hlI79oiX4lhf-iG5eQ}" th:target="_blank" id="socialMediaIcons" class="fab fa-youtube"></a>
+                            <a th:href="@{//youtube.com/channel/UCnBY8hlI79oiX4lhf-iG5eQ}" th:target="_blank" id="socialMediaIcons" class="fab fa-twitch"></a>-->
+
+
+                                <a th:href="@{//twitch.tv/honormeclan?fbclid=IwAR25K1Y_4umxhbWoTLtGr_2Hh_ZS3DVVxohIBiXqiEnijvUmOGwJo9NBZpA}" id="socialMediaIcons" th:target="_blank" class="fab fa-twitch" ></a>
+                                <a th:href="@{//facebook.com/HonorMeClan}" id="socialMediaIcons" th:target="_blank" class="fab fa-facebook" ></a>
+                                <a th:href="@{//youtube.com/channel/UCnBY8hlI79oiX4lhf-iG5eQ}" id="socialMediaIcons" th:target="_blank" class="fab fa-youtube" ></a>
+
                         </div>
-                        <div class="col-md-3 text-right small align-self-end">© 2019, Honor Me IT-Department</div>
+                        <div class="col-md-4 text-right small align-self-end">© 2019, Honor Me IT-Department</div>
                     </div>
                 </div>
             </footer>

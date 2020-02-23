@@ -26,7 +26,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.Model;
 
 @Controller
@@ -37,14 +36,14 @@ public class Main {
     Summoners summonerData;//Object to display Data 
     
     // summoner ID's
-    final String coregamer90 = "aa4jcGs7NcmtsZX34VGa3M-Wd54VMzpWQhTB-IOe61yF-A";
-    final String fiffo = "EFZVo8z7W0UKovfKeO4AwKJm6BEX1DTL08mohDa5Ff8";
-    final String braindead28 = "RA0oqMcbzrKajg_PpizLdKNn4k_4qejD8WbSA7nuObuCVMc";
-    final String besoffenekugel = "dvEpycFPR1HKBNRfGeoGDgODyda4CT81MQtKWaVGlEuJgu4";
-    final String seppl = "jWTR04F9xBPoZ16ZOK1mxDcpzDmx8bNhTwNOG7ptFWUE5G8";
-    final String killhim = "E8QHCJB3fGeRd6l3burSooxg7xSWsKmy-SJc--_6Foc";
-    final String ulzman = "Vw6fvT3L34ao5xIl8tnuEa_gjxciSmGBkG_h4YH36HI";
-    final String lordkiller = "h-rEbaekLHlV4ph7PlPd9kh1eoGQKSfOWFoSBARbxarJ2A";
+    final String coregamer90 = "EA-P_z7ydJRcd2gckHhiwwviock3Q_GrySADMBn0QxskmA";
+    final String fiffo = "3R0bQzyrkYmwOHYx97AVSn73l2Mi8ydLxdyfpDEP3zM";
+    final String braindead28 = "XkyQ7mxWpWiwJDtdlAt7V1JYgdzScqvonIP2gBY9Jw5vBIs";
+    final String besoffenekugel = "bFgfX0nSyvI2x-Hx0k4CXMWxD1eF2t5x7x1Tq9yyFpuTSUY";
+    final String seppl = "-unE9mwKRNylTpCO2tQahtU71ALUBZgA8rEbTyqQAkEakRI";
+    final String killhim = "3Wb9g5oYsFdu_bfRWMel-jbVHMHOcLTe10b7R8Udv10";
+    final String ulzman = "hUKb1lWcR7J8zdV2bDc07RqIDXjwN1Dl5P51SrwMlrE";
+    final String lordkiller = "xPVkkcfHpSoBHdnZ3lePCxejPb7SJd0eMvRSYoQZFpxnkA";
 
     final String RIOT_KEY = System.getenv("RIOT_KEY");
         
